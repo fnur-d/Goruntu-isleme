@@ -1,0 +1,17 @@
+import cv2
+import numpy as np
+
+resim=np.zeros((300,300,3),dtype="uint8")  #300 e 300 lük bir resim oluşturduk. 
+#çizgi çizme
+cv2.line(resim,(0,0),(150,150),(200,90,200),5)  #değişkenimizin ismi ,  başlangıç konumu , bitiş konumu  , renk kodları ,  kalınlık
+
+#daire çizme
+cv2.circle(resim,(150,150),25,(150,200,200),2) #değişken , merkez  , yarıçap , renk kodu , kalınlık
+
+#resime yazı yazdırma
+cv2.putText(resim,"yazim",(180,180),cv2.FONT_HERSHEY_SIMPLEX,1,(80,90,180),4)
+# degisken,  yazımız,   baslangıç konumu,   yazı tipi,    yazı boyutu,  renk kodu,  kalınlık
+
+cv2.imshow("resim",resim)
+cv2.waitKey(0)
+cv2.destroyAllWindows()
